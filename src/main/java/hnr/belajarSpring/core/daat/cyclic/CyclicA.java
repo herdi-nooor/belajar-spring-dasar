@@ -1,4 +1,4 @@
-package hnr.belajarSpring.core.cyclic;
+package hnr.belajarSpring.core.daat.cyclic;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

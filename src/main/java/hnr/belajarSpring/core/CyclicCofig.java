@@ -1,9 +1,8 @@
 package hnr.belajarSpring.core;
 
-import hnr.belajarSpring.core.cyclic.CyclicA;
-import hnr.belajarSpring.core.cyclic.CyclicB;
-import hnr.belajarSpring.core.cyclic.CyclicC;
-import org.springframework.boot.autoconfigure.batch.BatchDataSource;
+import hnr.belajarSpring.core.daat.cyclic.CyclicA;
+import hnr.belajarSpring.core.daat.cyclic.CyclicB;
+import hnr.belajarSpring.core.daat.cyclic.CyclicC;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
