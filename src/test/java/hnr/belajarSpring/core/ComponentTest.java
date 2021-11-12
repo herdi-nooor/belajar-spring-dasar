@@ -1,6 +1,10 @@
 package hnr.belajarSpring.core;
 
+import hnr.belajarSpring.core.Repository.CategoryRepository;
+import hnr.belajarSpring.core.Repository.CustumerRepository;
 import hnr.belajarSpring.core.Repository.ProductRepository;
+import hnr.belajarSpring.core.serivce.CategoryService;
+import hnr.belajarSpring.core.serivce.CustumerService;
 import hnr.belajarSpring.core.serivce.ProducService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -34,5 +38,24 @@ public class ComponentTest {
         ProductRepository productRepository = applicationContext.getBean(ProductRepository.class);
 
         Assertions.assertSame(productRepository, producService.getProductRepository());
+    }
+
+    @Test
+    void testSetterDepedenciInjection(){
+
+        CategoryService categoryService = applicationContext.getBean(CategoryService.class);
+        CategoryRepository categoryRepository = applicationContext.getBean(CategoryRepository.class);
+
+        Assertions.assertSame(categoryRepository, categoryService.getCategoryRepository());
+
+    }
+
+    @Test
+    void testQualifierDI(){
+
+        CustumerService custumerService = applicationContext.getBean(CustumerService.class);
+
+        CustumerRepository normalcustumerRepository = applicationContext.getBean("normalCustumerRepository", CustumerRepository.class);
+        CustumerRepository premiumcustumerRepository = applicationContext.getBean("premiumCustumerRepository", CustumerRepository.class);
     }
 }
