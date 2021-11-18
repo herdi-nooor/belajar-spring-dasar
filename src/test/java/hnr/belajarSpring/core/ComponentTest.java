@@ -3,6 +3,7 @@ package hnr.belajarSpring.core;
 import hnr.belajarSpring.core.Repository.CategoryRepository;
 import hnr.belajarSpring.core.Repository.CustumerRepository;
 import hnr.belajarSpring.core.Repository.ProductRepository;
+import hnr.belajarSpring.core.daat.MultiFoo;
 import hnr.belajarSpring.core.serivce.CategoryService;
 import hnr.belajarSpring.core.serivce.CustumerService;
 import hnr.belajarSpring.core.serivce.ProducService;
@@ -57,5 +58,11 @@ public class ComponentTest {
 
         CustumerRepository normalcustumerRepository = applicationContext.getBean("normalCustumerRepository", CustumerRepository.class);
         CustumerRepository premiumcustumerRepository = applicationContext.getBean("premiumCustumerRepository", CustumerRepository.class);
+    }
+
+    @Test
+    void testObjectProvider(){
+        MultiFoo multiFoo = applicationContext.getBean(MultiFoo.class);
+        Assertions.assertEquals(3,  multiFoo.getFoos().size());
     }
 }
