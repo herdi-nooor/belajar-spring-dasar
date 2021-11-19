@@ -2,6 +2,7 @@ package hnr.belajarSpring.core;
 
 import hnr.belajarSpring.core.listener.LoginSecondSuccessListener;
 import hnr.belajarSpring.core.listener.LoginSuccessListener;
+import hnr.belajarSpring.core.listener.UserListener;
 import hnr.belajarSpring.core.serivce.UserServices;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,7 +16,8 @@ public class EventListenerTest {
     @Import({
             UserServices.class,
             LoginSuccessListener.class,
-            LoginSecondSuccessListener.class
+            LoginSecondSuccessListener.class,
+            UserListener.class
     })
     public static  class TestConfiguration{
 
